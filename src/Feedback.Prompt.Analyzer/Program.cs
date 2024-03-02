@@ -12,9 +12,9 @@ var app = builder.Build();
 
 await app.ConfigureAsync();
 
-var prompts = new List<SkPrompt>
+var relevanceAnalysisPrompts = new List<SkPrompt>
 {
-    new SkPrompt
+    new()
     {
         Name = "Test_01",
         PromptContent = """
@@ -39,6 +39,92 @@ var prompts = new List<SkPrompt>
                         """
     }
 };
+
+var relevanceExtractionPrompts = new List<SkPrompt>
+{
+    new()
+    {
+        Name = "Test_02",
+        PromptContent = """
+                        ## Instructions"
+
+                        Extract only relevant parts of the customer feedback for the product
+
+                        Requirements :
+                        1. if feedback contains relevant content in different parts of the feedback, all relevant parts must be extracted and appended
+                        2. try to extract as a readable sentence, not just words
+
+                        ## Data
+
+                        {{$productDescription}}
+
+                        ## Input
+
+                        {{$customerFeedback}}
+
+                        ## Result
+
+                        """
+    }
+};
+
+var redactPiiPrompts = new List<SkPrompt>
+{
+    new()
+    {
+        Name = "Test_02",
+        PromptContent = """
+                        ## Instructions"
+
+                        Redact personal information from the customer feedback
+                        
+                        Requirements :
+                        1. redact only words that is considered as personal information, not the whole sentence
+                        2. replace the redacted words with asterisks
+                        3. make sure sentences are still readable
+
+                        ## Data
+
+                        {{$productDescription}}
+
+                        ## Input
+
+                        {{$customerFeedback}}
+
+                        ## Result
+
+                        """
+    }
+};
+
+var recognizeLanguagePrompts = new List<SkPrompt>
+{
+    new()
+    {
+        Name = "Test_02",
+        PromptContent = """
+                        ## Instructions"
+                        
+                        Recognize languages from the customer feedback
+
+                        Requirements :
+                        1. list language if something readable or like a sentence written in it, not just a word
+                        2. list all languages feedback contains multiple languages
+
+                        ## Data
+
+                        {{$productDescription}}
+
+                        ## Input
+
+                        {{$customerFeedback}}
+
+                        ## Result
+
+                        """
+    }
+};
+
 
 var trainingData = new TrainingDataModel
 {
@@ -70,7 +156,7 @@ var trainingData = new TrainingDataModel
         new CustomerFeedback
         {
             UserName = "John",
-            Comment = "This mouse feels awesome! Super light and moves so smoothly. Definitely happy with my purchase."
+            Comment = "I really like computer gaming and gaming keyboards. This mouse feels awesome! Super light and moves so smoothly. Definitely happy with my purchase. Last month my friend Mike also bought this mouse and recommended to me. ¡Este ratón es increíblemente rápido y preciso! Una verdadera ventaja para los juegos competitivos."
         }
     ]
 };
@@ -78,7 +164,13 @@ var trainingData = new TrainingDataModel
 await using var servicesScope = app.Services.CreateAsyncScope();
 var relevanceBenchmarkService = servicesScope.ServiceProvider.GetRequiredService<RelevanceBenchmarkService>();
 
-var result = await relevanceBenchmarkService.AnalyzeRelevanceResultAsync(prompts, trainingData);
+// var relevance = await relevanceBenchmarkService.AnalyzeRelevanceResultAsync(relevanceAnalysisPrompts, trainingData);
+
+// var extractedRelevantContent = await relevanceBenchmarkService.AnalyzeRelevanceResultAsync(relevanceExtractionPrompts, trainingData);
+
+// var redactedPersonalInformation = await relevanceBenchmarkService.AnalyzeRelevanceResultAsync(redactPiiPrompts, trainingData);
+
+var recognizedLanguages = await relevanceBenchmarkService.AnalyzeRelevanceResultAsync(recognizeLanguagePrompts, trainingData);
 
 await app.RunAsync();
 
