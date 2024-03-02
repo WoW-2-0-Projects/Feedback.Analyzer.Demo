@@ -1,9 +1,11 @@
-namespace Feedback.Prompt.Analyzer.Domain.Models.Entities;
+using Feedback.Prompt.Analyzer.Domain.Common.Entities;
+
+namespace Feedback.Prompt.Analyzer.Domain.Entities;
 
 /// <summary>
 /// Represents product purchased by customer  
 /// </summary>
-public class Product
+public class Product : AuditableEntity
 {
     /// <summary>
     /// Gets or sets product name

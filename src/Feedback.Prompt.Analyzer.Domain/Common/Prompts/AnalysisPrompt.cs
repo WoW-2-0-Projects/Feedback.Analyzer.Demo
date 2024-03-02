@@ -1,4 +1,4 @@
-namespace Feedback.Prompt.Analyzer.Domain.Models.Common;
+namespace Feedback.Prompt.Analyzer.Domain.Common.Prompts;
 
 public abstract class AnalysisPrompt
 {

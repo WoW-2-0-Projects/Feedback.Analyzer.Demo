@@ -1,7 +1,7 @@
+using Feedback.Prompt.Analyzer.Domain.Common.Prompts;
 using Feedback.Prompt.Analyzer.Domain.Enums;
-using Feedback.Prompt.Analyzer.Domain.Models.Common;
 
-namespace Feedback.Prompt.Analyzer.Domain.Models.Entities;
+namespace Feedback.Prompt.Analyzer.Domain.Entities;
 
 /// <summary>
 /// Represents a prompt for relevance analysis.

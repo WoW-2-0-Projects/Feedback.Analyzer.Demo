@@ -1,4 +1,4 @@
-namespace Feedback.Prompt.Analyzer.Domain.Models.Entities;
+namespace Feedback.Prompt.Analyzer.Domain.Entities;
 
 /// <summary>
 /// Represents feedback analysis result

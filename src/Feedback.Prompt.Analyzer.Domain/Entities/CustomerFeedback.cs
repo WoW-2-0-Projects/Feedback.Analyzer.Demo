@@ -1,9 +1,11 @@
-namespace Feedback.Prompt.Analyzer.Domain.Models.Entities;
+using Feedback.Prompt.Analyzer.Domain.Common.Entities;
+
+namespace Feedback.Prompt.Analyzer.Domain.Entities;
 
 /// <summary>
 /// Represents customer feedback
 /// </summary>
-public class CustomerFeedback
+public class CustomerFeedback : Entity
 {
     /// <summary>
     /// Gets or sets customer username

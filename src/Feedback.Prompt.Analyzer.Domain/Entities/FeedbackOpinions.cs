@@ -1,6 +1,6 @@
-using Feedback.Prompt.Analyzer.Domain.Models.Common;
+using Feedback.Prompt.Analyzer.Domain.Common.Feedbacks;
 
-namespace Feedback.Prompt.Analyzer.Domain.Models.Entities;
+namespace Feedback.Prompt.Analyzer.Domain.Entities;
 
 /// <summary>
 /// Represents feedback opinions

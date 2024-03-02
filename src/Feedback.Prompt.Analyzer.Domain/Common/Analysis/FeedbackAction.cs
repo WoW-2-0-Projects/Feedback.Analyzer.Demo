@@ -1,4 +1,4 @@
-namespace Feedback.Prompt.Analyzer.Domain.Models.Common;
+namespace Feedback.Prompt.Analyzer.Domain.Common.Analysis;
 
 /// <summary>
 /// Represents feedback action

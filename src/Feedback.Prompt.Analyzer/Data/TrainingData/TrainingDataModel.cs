@@ -1,4 +1,4 @@
-using Feedback.Prompt.Analyzer.Domain.Models.Entities;
+using Feedback.Prompt.Analyzer.Domain.Entities;
 
 namespace Feedback.Prompt.Analyzer.Data.TrainingData;
 

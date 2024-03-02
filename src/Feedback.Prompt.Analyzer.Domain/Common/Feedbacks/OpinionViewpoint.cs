@@ -1,6 +1,6 @@
 using Feedback.Prompt.Analyzer.Domain.Enums;
 
-namespace Feedback.Prompt.Analyzer.Domain.Models.Common;
+namespace Feedback.Prompt.Analyzer.Domain.Common.Feedbacks;
 
 /// <summary>
 /// Represents opinion viewpoint
