@@ -1,4 +1,4 @@
-﻿namespace Feedback.Prompt.Analyzer.Exceptions;
+﻿namespace Feedback.Prompt.Analyzer.Extensions;
 
 /// <summary>
 /// Extensions methods for handling exceptions in asynchronous operations and converting them into FuncResult.
