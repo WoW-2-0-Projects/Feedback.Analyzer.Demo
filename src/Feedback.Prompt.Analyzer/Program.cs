@@ -125,6 +125,49 @@ var recognizeLanguagePrompts = new List<SkPrompt>
     }
 };
 
+var opinionPointMining = new List<SkPrompt>
+{
+    new()
+    {
+        Name = "Test_02",
+        PromptContent = """
+                        ## Instructions"
+
+                        Extract positive and  negative opinion points from the user feedback.
+                        
+                        Requirements :
+                        1. extract positive and negative opinion points from the user feedback.
+                        2. don't include neutral opinion points
+                        3. only extract opinion points that are related to the product
+                        4. only extract the section that contains opinion itself not the whole sentence
+                        5. don't include any points from product description
+                        6. be aware of mixed complex sentences that might contain turning points
+                        7. exclude actionable opinions because we want exact source of positive and negative experience not solutions
+                        8. analyze and exclude sentences with opinions that you are not sure whether it is about this product
+                        9. separate points if there are multiple points in a single sentence or in a conjunction
+                        
+                        ## Examples 
+                        
+                        These examples contain turning points
+                        
+                        - Overall I think the Viper is a good mouse, but I can't afford but - positive
+                        - Overall I think the Viper is a good mouse, but not for me - neutral
+                        - Overall Viper is a good mouse, they said, but nope - negative
+                        
+                        ## Product Description:
+                        
+                        {{$productDescription}}
+
+                        ## Customer feedback :
+
+                        {{$customerFeedback}}
+
+                        ## Result
+
+                        """
+    }
+};
+
 
 var trainingData = new TrainingDataModel
 {
@@ -156,7 +199,7 @@ var trainingData = new TrainingDataModel
         new CustomerFeedback
         {
             UserName = "John",
-            Comment = "I really like computer gaming and gaming keyboards. This mouse feels awesome! Super light and moves so smoothly. Definitely happy with my purchase. Last month my friend Mike also bought this mouse and recommended to me. ¡Este ratón es increíblemente rápido y preciso! Una verdadera ventaja para los juegos competitivos."
+            Comment = "I laid my hands on the Viper in a local store and on the spot it felt rather flat. I think I prefer something with more hump and side area to grip onto. right now I have a basilisk v2 and think it's definetely more comfy, but that grip could still be better.\n\nThe Synapse software is extremely greedy though. 300MB HD space and about 200MB RAM is ludicrous for a gloryfied mouse driver. Overall I think the Viper is a good mouse, but not for me."
         }
     ]
 };
@@ -165,12 +208,14 @@ await using var servicesScope = app.Services.CreateAsyncScope();
 var relevanceBenchmarkService = servicesScope.ServiceProvider.GetRequiredService<RelevanceBenchmarkService>();
 
 // var relevance = await relevanceBenchmarkService.AnalyzeRelevanceResultAsync(relevanceAnalysisPrompts, trainingData);
-
+//
 // var extractedRelevantContent = await relevanceBenchmarkService.AnalyzeRelevanceResultAsync(relevanceExtractionPrompts, trainingData);
-
+//
 // var redactedPersonalInformation = await relevanceBenchmarkService.AnalyzeRelevanceResultAsync(redactPiiPrompts, trainingData);
+//
+// var recognizedLanguages = await relevanceBenchmarkService.AnalyzeRelevanceResultAsync(recognizeLanguagePrompts, trainingData);
 
-var recognizedLanguages = await relevanceBenchmarkService.AnalyzeRelevanceResultAsync(recognizeLanguagePrompts, trainingData);
+var recognizedLanguages = await relevanceBenchmarkService.AnalyzeRelevanceResultAsync(opinionPointMining, trainingData);
 
 await app.RunAsync();
 
