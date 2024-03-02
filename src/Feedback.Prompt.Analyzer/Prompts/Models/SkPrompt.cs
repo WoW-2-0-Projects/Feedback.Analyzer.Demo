@@ -1,6 +1,4 @@
-using Microsoft.SemanticKernel;
-
-namespace Test.Prompts.Models;
+namespace Feedback.Prompt.Analyzer.Prompts.Models;
 
 public class SkPrompt
 {

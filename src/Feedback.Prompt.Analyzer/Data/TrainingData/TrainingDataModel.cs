@@ -1,6 +1,6 @@
-using Test.Data.Models;
+using Feedback.Prompt.Analyzer.Data.Models;
 
-namespace Test.Data.TrainingData;
+namespace Feedback.Prompt.Analyzer.Data.TrainingData;
 
 public class TrainingDataModel
 {

@@ -1,4 +1,4 @@
-namespace Test.AnalysisModels.Common;
+namespace Feedback.Prompt.Analyzer.AnalysisModels.Common;
 
 public enum ConfirmationAction
 {

@@ -1,6 +1,6 @@
-using Test.AnalysisModels.Relevance;
+using Feedback.Prompt.Analyzer.AnalysisModels.Relevance;
 
-namespace Test.AnalysisModels.Common;
+namespace Feedback.Prompt.Analyzer.AnalysisModels.Common;
 
 /// <summary>
 /// Represents  the decision made by the content moderation system.

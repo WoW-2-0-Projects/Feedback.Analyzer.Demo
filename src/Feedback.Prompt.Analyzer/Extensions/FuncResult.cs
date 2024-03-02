@@ -1,4 +1,4 @@
-﻿namespace Test.Exceptions;
+﻿namespace Feedback.Prompt.Analyzer.Exceptions;
 
 /// <summary>
 /// Represents the result of a function that can return either data of type T or an exception.

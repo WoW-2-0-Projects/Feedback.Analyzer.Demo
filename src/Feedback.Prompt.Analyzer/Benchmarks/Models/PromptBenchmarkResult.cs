@@ -1,14 +1,13 @@
-using Test.Prompts.Models;
+using Feedback.Prompt.Analyzer.Exceptions;
+using Feedback.Prompt.Analyzer.Prompts.Models;
 
-namespace Test.Benchmarks.Models;
+namespace Feedback.Prompt.Analyzer.Benchmarks.Models;
 
 public record PromptBenchmarkResult
 {
-    public TimeSpan ExecutionTime { get; set; }
-    
     public SkPromptAction SkPromptAction { get; set; } = default!;
 
-    public Exception Exception { get; set; } = default!;
+    public TimeSpan ExecutionTime { get; set; }
     
-    
+    public FuncResult<string> Result { get; set; } = default!;
 }

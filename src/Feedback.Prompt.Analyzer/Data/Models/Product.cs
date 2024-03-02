@@ -1,4 +1,4 @@
-namespace Test.Data.Models;
+namespace Feedback.Prompt.Analyzer.Data.Models;
 
 public class Product
 {

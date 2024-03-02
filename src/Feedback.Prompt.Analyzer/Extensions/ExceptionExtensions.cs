@@ -1,7 +1,7 @@
-﻿namespace Feedback.Analyzer.Demo.Exceptions;
+﻿namespace Feedback.Prompt.Analyzer.Exceptions;
 
 /// <summary>
-/// Exceptions methods for handling exceptions in asynchronous operations and converting them into FuncResult.
+/// Extensions methods for handling exceptions in asynchronous operations and converting them into FuncResult.
 /// </summary>
 public static class ExceptionExtensions
 {
@@ -11,7 +11,7 @@ public static class ExceptionExtensions
     /// <typeparam name="T">The type of the result.</typeparam>
     /// <param name="func">The asynchronous function to invoke.</param>
     /// <returns>A <see cref="FuncResult{T}"/> representing the result of the asynchronous operation.</returns>
-    public static async ValueTask<FuncResult<T>> GetValueAsync<T>(this Func<Task<T>> func) where T : struct
+    public static async ValueTask<FuncResult<T>> GetValueAsync<T>(this Func<Task<T>> func)
     {
         FuncResult<T> result;
 

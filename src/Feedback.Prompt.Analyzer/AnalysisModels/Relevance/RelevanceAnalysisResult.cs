@@ -1,4 +1,4 @@
-namespace Test.Models.Relevance;
+namespace Feedback.Prompt.Analyzer.AnalysisModels.Relevance;
 
 public class RelevanceAnalysisResult
 {

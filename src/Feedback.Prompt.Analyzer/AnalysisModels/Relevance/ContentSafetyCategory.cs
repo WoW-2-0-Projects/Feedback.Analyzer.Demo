@@ -1,4 +1,4 @@
-namespace Test.AnalysisModels.Relevance;
+namespace Feedback.Prompt.Analyzer.AnalysisModels.Relevance;
 
 /// <summary>
 /// Represents the content safety category.
