@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="AnalysisModels\Actions\" />
+      <Folder Include="AnalysisModels\Entities\" />
+      <Folder Include="AnalysisModels\Metrics\" />
+      <Folder Include="AnalysisModels\Opinion\" />
+      <Folder Include="Benchmarks\Common\" />
+      <Folder Include="Data\InferenceData\" />
+    </ItemGroup>
+
+</Project>
