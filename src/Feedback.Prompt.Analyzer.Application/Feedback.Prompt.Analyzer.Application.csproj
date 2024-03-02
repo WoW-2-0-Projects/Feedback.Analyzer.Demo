@@ -10,4 +10,9 @@
       <ProjectReference Include="..\Feedback.Prompt.Analyzer.Domain\Feedback.Prompt.Analyzer.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Comparers\" />
+      <Folder Include="Prompts\" />
+    </ItemGroup>
+
 </Project>

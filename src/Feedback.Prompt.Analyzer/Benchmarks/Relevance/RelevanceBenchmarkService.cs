@@ -1,9 +1,9 @@
 using System.Diagnostics;
 using Feedback.Prompt.Analyzer.Benchmarks.Models;
 using Feedback.Prompt.Analyzer.Data.TrainingData;
+using Feedback.Prompt.Analyzer.Extensions;
 using Feedback.Prompt.Analyzer.Prompts.Models;
 using Microsoft.SemanticKernel;
-using Feedback.Prompt.Analyzer.Exceptions;
 
 namespace Feedback.Prompt.Analyzer.Benchmarks.Relevance;
 

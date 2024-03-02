@@ -1,4 +1,4 @@
-using Feedback.Prompt.Analyzer.Exceptions;
+using Feedback.Prompt.Analyzer.Extensions;
 using Feedback.Prompt.Analyzer.Prompts.Models;
 
 namespace Feedback.Prompt.Analyzer.Benchmarks.Models;

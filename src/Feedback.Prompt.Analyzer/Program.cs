@@ -1,7 +1,7 @@
 using Feedback.Prompt.Analyzer.Benchmarks.Relevance;
 using Feedback.Prompt.Analyzer.Configurations;
-using Feedback.Prompt.Analyzer.Data.Models;
 using Feedback.Prompt.Analyzer.Data.TrainingData;
+using Feedback.Prompt.Analyzer.Domain.Models.Entities;
 using Feedback.Prompt.Analyzer.Prompts.Models;
 
 var builder = WebApplication.CreateBuilder(args);
