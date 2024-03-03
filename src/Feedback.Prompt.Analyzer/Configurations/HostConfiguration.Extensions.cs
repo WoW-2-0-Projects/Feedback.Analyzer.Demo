@@ -1,35 +1,10 @@
 using Feedback.Prompt.Analyzer.Benchmarks.Relevance;
-using Feedback.Prompt.Analyzer.Domain.Constants;
-using Feedback.Prompt.Analyzer.Persistence.DataContexts;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.SemanticKernel;
 
 namespace Feedback.Prompt.Analyzer.Configurations;
 
 public static partial class HostConfiguration
 {
-    
-    /// <summary>
-    /// Adds persistence-related services to the web application builder.
-    /// </summary>
-    /// <param name="builder"></param>
-    /// <returns></returns>
-    private static WebApplicationBuilder AddPersistence(this WebApplicationBuilder builder)
-    {
-        // Define db connection string based on runtime environment
-        var dbConnectionString = builder.Environment.IsProduction()
-            ? Environment.GetEnvironmentVariable(DataAccessConstants.DbConnectionString)
-            : builder.Configuration.GetConnectionString(DataAccessConstants.DbConnectionString);
-        
-        // Register db context
-        builder.Services.AddDbContext<AppDbContext>(options =>
-        {
-            options.UseNpgsql(dbConnectionString);
-        });
-
-        return builder;
-    }
-    
     /// <summary>
     /// Configures exposers including controllers
     /// </summary>

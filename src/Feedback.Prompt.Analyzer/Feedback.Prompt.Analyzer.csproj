@@ -14,16 +14,11 @@
       <Folder Include="AnalysisModels\Opinion\" />
       <Folder Include="Benchmarks\Common\" />
       <Folder Include="Data\InferenceData\" />
-      <Folder Include="Data\Models\" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Microsoft.SemanticKernel" Version="1.5.0" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Feedback.Prompt.Analyzer.Infrastructure\Feedback.Prompt.Analyzer.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
